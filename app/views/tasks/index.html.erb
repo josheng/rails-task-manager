@@ -1,0 +1,8 @@
+<h1>My Task Manager</h1>
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= link_to "#{task.title}: #{task.details}", task_path(task) %><%= link_to "🗑 Delete This", task_path(task), method: :delete, data: { confirm: "Are you sure?" }  %></li>
+<% end %>
+</ul>
+
+<%= link_to "Add a new Task", new_task_path  %>
